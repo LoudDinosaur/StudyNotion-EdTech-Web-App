@@ -165,18 +165,17 @@ const VideoDetails = () => {
   };
 
   const handleLectureCompletion = async () => {
-    //dummy code - > baad mein we will replace it wit the actual call
-    setLoading(true);
+    setLoading(true)
     const res = await markLectureAsComplete(
-      { courseId: courseId, subSectionId: subSectionId },
+      { courseId: courseId, subsectionId: subSectionId },
       token
-    );
-    //state update karo
+    )
+    //state update krdo
     if (res) {
-      dispatch(updateCompletedLectures(subSectionId));
+      dispatch(updateCompletedLectures(subSectionId))
     }
-    setLoading(false);
-  };
+    setLoading(false)
+  }
 
   return (
     <div className="flex flex-col gap-5 text-white">
@@ -206,12 +205,13 @@ const VideoDetails = () => {
               className="full absolute inset-0 z-[100] grid h-full place-content-center font-inter"  
               >
                 {!completedLectures.includes(subSectionId) && (
-                  <IconBtn
-                    disabled={loading}
-                    onclick={() => handleLectureCompletion()}
-                    text={!loading ? "Mark As Completed" : "Loading..."}
-                  />
-                )}
+                <IconBtn
+                  disabled={loading}
+                  onclick={() => handleLectureCompletion()}
+                  text={!loading ? "Mark As Completed" : "Loading..."}
+                  customClasses="text-xl max-w-max px-4 mx-auto"
+                />
+              )}
 
                 <IconBtn
                   disabled={loading}
