@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
+import "../../App.css"
 import { Autoplay, FreeMode, Pagination, Navigation } from "swiper/modules";
 import ReactStars from "react-rating-stars-component";
 import { apiConnector } from "../../services/apiconnector";
@@ -35,7 +36,7 @@ const ReviewSlider = () => {
       <div className="my-[50px] h-[184px] max-w-maxContentTab lg:max-w-maxContent">
         <Swiper
           slidesPerView={4}
-          spaceBetween={24}
+          spaceBetween={25}
           loop={true}
           freeMode={true}
           autoplay={{
@@ -48,7 +49,7 @@ const ReviewSlider = () => {
           {/* //saare reviews ke liye maps ka use krlo */}
           {reviews.map((review, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col gap-3 bg-richblack-800 text-[14px] text-richblack-25">
+              <div className="flex flex-col gap-3 bg-richblack-800 p-3 text-[14px] text-richblack-25">
                 <div className="flex items-center gap-4">
                   <img
                     src={
@@ -57,7 +58,7 @@ const ReviewSlider = () => {
                         : `https://api.dicebear.com/5.x/initials/svg?sedd=${review?.user?.firstName} ${review?.user?.lastName}`
                     }
                     alt="Profile Pic"
-                    className="h-9 w-9 object-cover rounded-full"
+                    className="h-9 w-9 rounded-full object-cover"
                   />
                   <div className="flex flex-col">
                     <h1 className="font-semibold text-richblack-5">
