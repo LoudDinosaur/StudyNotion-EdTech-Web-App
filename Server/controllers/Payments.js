@@ -3,7 +3,7 @@ const Course = require("../models/Course");
 const User = require("../models/User");
 const mailSender = require("../utils/mailSender");
 const {courseEnrollmentEmail} = require("../mail/templates/courseEnrollmentEmail");
-const { default: mongoose } = require("mongoose");
+const mongoose= require("mongoose");
 const { paymentSuccessEmail } = require("../mail/templates/paymentSuccessEmail");
 const crypto = require("crypto");
 const CourseProgress = require("../models/CourseProgress");
@@ -47,15 +47,16 @@ exports.capturePayment = async(req, res) => {
             return res.status(500).json({success:false, message:error.message});
         }
     }
-    const currency = "INR";
+    // const currency = "INR";
     const options = {
         amount: totalAmount * 100,
-        currency,
+        currency : "INR",
         receipt: Math.random(Date.now()).toString(),
     }
 
     try{
         const paymentResponse = await instance.orders.create(options);
+        console.log(paymentResponse)
         res.json({
             success:true,
             message:paymentResponse,
