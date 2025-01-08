@@ -5,13 +5,13 @@ import {FaArrowRight} from "react-icons/fa"
 import { TypeAnimation } from 'react-type-animation'
 
 const CodeBlocks = ({
-    position, heading, subheading, ctabtn1, ctabtn2, codeblock, backgroudGradient, codeColor
+    position, heading, subheading, ctabtn1, ctabtn2, codeblock, backgroundGradient, codeColor
 }) => {
   return (
-    <div className={`flex ${position} my-20 justify-between gap-10`}>
+    <div className={`flex ${position} my-20 justify-between lg:gap-10 gap-10`}>
       
     {/*Section 1*/}
-    <div className='w-[50%] flex flex-col gap-8'>
+    <div className='w-[100%] lg:w-[50%] flex flex-col gap-8'>
         {heading}
         <div className='text-richblack-300 font-bold '>
             {subheading}
@@ -34,10 +34,10 @@ const CodeBlocks = ({
     </div>
 
      {/*Section 2*/}
-     <div className=' h-fit  flex flex-row text-10[px] w-[100%] py-4 lg:w-[500px]'> 
-        {/*HW -> BG gradient*/}
+     <div className='h-fit code-border flex flex-row py-3 text-[10px] sm:text-sm leading-[18px] sm:leading-6 relative w-[100%] lg:w-[470px]'> 
+        {backgroundGradient}
 
-        <div className='text-center flex flex-col w-[10%] text-richblack-400 font-inter font-bold'>
+        <div className='text-center flex flex-col w-[10%] select-none text-richblack-400 font-inter font-bold'>
             <p>1</p>
             <p>2</p>
             <p>3</p>
@@ -53,7 +53,7 @@ const CodeBlocks = ({
 
         <div className={`w-[90%] flex flex-col gap-2 font-bold font-mono ${codeColor} pr-2`}>
            <TypeAnimation
-            sequence={[codeblock, 2000, ""]}
+            sequence={[codeblock, 1000, ""]}
             repeat={Infinity}
             cursor={true}
            

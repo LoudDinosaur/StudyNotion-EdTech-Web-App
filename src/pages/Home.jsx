@@ -90,7 +90,7 @@ const Home = () => {
               active: true,
             }}
             ctabtn2={{
-              btnText: "Learn Moore",
+              btnText: "Learn More",
               linkto: "/login",
               active: false,
             }}
@@ -114,12 +114,12 @@ const Home = () => {
               "Go ahead, give it a try. Our hands-on learning environment means you'll be writing real code from your very first lesson."
             }
             ctabtn1={{
-              btnText: "Try it yourself",
+              btnText: "Try it Yourself",
               linkto: "/signup",
               active: true,
             }}
             ctabtn2={{
-              btnText: "learn more",
+              btnText: "Learn More",
               linkto: "/login",
               active: false,
             }}
