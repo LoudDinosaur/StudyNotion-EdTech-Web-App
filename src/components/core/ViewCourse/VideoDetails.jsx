@@ -104,9 +104,9 @@ const VideoDetails = () => {
     if (currentSubSectionIndex !== noofSubSections - 1) {
       //same section ki next video mein jao
       const nextSubSectionId =
-        courseSectionData[currentSectionIndex].subSection[
-          currentSectionIndex + 1
-        ]._id;
+      courseSectionData[currentSectionIndex].subSection[
+        currentSubSectionIndex + 1
+      ]._id
       //next video pr jao
       navigate(
         `/view-course/${courseId}/section/${sectionId}/sub-section/${nextSubSectionId}`
@@ -143,7 +143,7 @@ const VideoDetails = () => {
       const prevSubSectionId =
         courseSectionData[currentSectionIndex].subSection[
           currentSectionIndex - 1
-        ];
+        ]._id;
       //is video pr chale jao
       navigate(
         `/view-course/${courseId}/section/${sectionId}/sub-section/${prevSubSectionId}`
